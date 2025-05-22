@@ -1,31 +1,33 @@
 package projekpbo.bangunDatar;
-
+import projekpbo.Geometri2D;
 public class PersegiPanjang extends Geometri2D {
 
     public double panjang;
-
     public double lebar;
 
     private double luasPersegiPanjang;
-
     private double kelilingPersegiPanjang;
 
     public PersegiPanjang(double panjang, double lebar) {
+        this.panjang = panjang;
+        this.lebar = lebar;
+        this.luasPersegiPanjang = hitungLuas();
+        this.kelilingPersegiPanjang = hitungKeliling();
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return panjang * lebar;
     }
 
     public double getLuasPersegiPanjang() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPersegiPanjang;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return 2 * (panjang + lebar);
     }
 
     public double getKelilingPersegiPanjang() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingPersegiPanjang;
     }
 }

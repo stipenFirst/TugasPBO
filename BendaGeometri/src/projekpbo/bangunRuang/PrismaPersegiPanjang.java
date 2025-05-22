@@ -1,29 +1,32 @@
 package projekpbo.bangunRuang;
+import projekpbo.bangunDatar.PersegiPanjang;
 
 public class PrismaPersegiPanjang extends PersegiPanjang {
 
     private double tinggiBalok;
-
     private double volumeBalok;
-
     private double luasPermukaanBalok;
 
     public PrismaPersegiPanjang(double panjang, double lebar, double tinggiBalok) {
+        super(panjang, lebar);
+        this.tinggiBalok = tinggiBalok;
+        this.volumeBalok = hitungVolume();
+        this.luasPermukaanBalok = hitungLuasPermukaan();
     }
 
     public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return panjang * lebar * tinggiBalok;
     }
 
     public double getVolumeBalok() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return volumeBalok;
     }
 
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return 2 * (panjang * lebar + panjang * tinggiBalok + lebar * tinggiBalok);
     }
 
     public double getLuasPermukaanBalok() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPermukaanBalok;
     }
 }
