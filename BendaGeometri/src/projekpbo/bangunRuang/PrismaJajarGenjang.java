@@ -1,29 +1,35 @@
 package projekpbo.bangunRuang;
 
+import projekpbo.bangunDatar.JajarGenjang;
+
 public class PrismaJajarGenjang extends JajarGenjang {
 
     private double tinggiPrismaJajarGenjang;
-
     private double volumePrismaJajarGenjang;
-
     private double luasPermukaanPrismaJajarGenjang;
 
-    public PrismaJajarGenjang(double alas, double tinggi, double sudutlancip, double tinggiPrismajajarGenjang) {
+    public PrismaJajarGenjang(double alas, double tinggi, double sudutlancip, double tinggiPrismaJajarGenjang) {
+        super(alas, tinggi, sudutlancip);
+        this.tinggiPrismaJajarGenjang = tinggiPrismaJajarGenjang;
+        this.volumePrismaJajarGenjang = hitungVolume();
+        this.luasPermukaanPrismaJajarGenjang = hitungLuasPermukaan();
     }
 
     public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // Volume prisma = luas alas × tinggi prisma
+        return getLuasJajarGenjang() * tinggiPrismaJajarGenjang;
     }
 
     public double getVolumePrismaJajarGenjang() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return volumePrismaJajarGenjang;
     }
 
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // Luas permukaan prisma = 2 × luas alas + keliling alas × tinggi prisma
+        return (2 * getLuasJajarGenjang()) + (getKelilingJajarGenjang() * tinggiPrismaJajarGenjang);
     }
 
     public double getLuasPermukaanPrismaJajarGenjang() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPermukaanPrismaJajarGenjang;
     }
 }
