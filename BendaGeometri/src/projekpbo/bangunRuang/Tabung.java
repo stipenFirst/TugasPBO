@@ -1,29 +1,31 @@
 package projekpbo.bangunRuang;
+import projekpbo.bangunDatar.Lingkaran;
 
 public class Tabung extends Lingkaran {
-
     private double tinggiSilinder;
-
     private double volumeSilinder;
-
     private double luasPermukaanSilinder;
 
     public Tabung(double jariJari, double tinggiSilinder) {
+        super(jariJari);
+        this.tinggiSilinder = tinggiSilinder;
     }
 
     public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        volumeSilinder = Math.PI * jariJari * jariJari * tinggiSilinder;
+        return volumeSilinder;
     }
 
     public double getVolumeSilinder() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return volumeSilinder;
     }
 
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasPermukaanSilinder = 2 * Math.PI * jariJari * (jariJari + tinggiSilinder);
+        return luasPermukaanSilinder;
     }
 
     public double getLuasPermukaanSilinder() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPermukaanSilinder;
     }
 }
