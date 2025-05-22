@@ -1,35 +1,41 @@
 package projekpbo.bangunDatar;
-
 public class TemberengLingkaran extends Lingkaran {
 
     private double taliBusur;
-
     private double busur;
-
-    private double jariJari;
-
     private double sudut;
 
     private double luasTemberengLingkaran;
-
-    private double KelilingTemberengLingkaran;
+    private double kelilingTemberengLingkaran;
 
     public TemberengLingkaran(double jariJari, double taliBusur, double sudut, double busur) {
+        super(jariJari);
+        this.taliBusur = taliBusur;
+        this.sudut = sudut;
+        this.busur = busur;
+        this.jariJari = jariJari;
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double luasJuring = (sudut / 360.0) * Math.PI * jariJari * jariJari;
+
+        double tinggiSegitiga = jariJari - Math.sqrt(jariJari * jariJari - (taliBusur / 2) * (taliBusur / 2));
+        double luasSegitiga = 0.5 * taliBusur * tinggiSegitiga;
+
+        luasTemberengLingkaran = luasJuring - luasSegitiga;
+        return luasTemberengLingkaran;
     }
 
     public double getLuasTembereng() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasTemberengLingkaran;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingTemberengLingkaran = busur + 2 * taliBusur;
+        return kelilingTemberengLingkaran;
     }
 
     public double getKelilingTembereng() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingTemberengLingkaran;
     }
 }

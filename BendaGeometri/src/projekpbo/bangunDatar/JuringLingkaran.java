@@ -1,31 +1,31 @@
 package projekpbo.bangunDatar;
-
 public class JuringLingkaran extends Lingkaran {
-
-    private double jariJari;
-
     private double sudut;
-
     private double luasJuringLingkaran;
-
     private double kelilingJuringLingkaran;
 
     public JuringLingkaran(double jariJari, double sudut) {
+        super(jariJari);
+        this.sudut = sudut;
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // luas juring = (θ/360) * π * r^2
+        luasJuringLingkaran = (sudut / 360.0) * Math.PI * jariJari * jariJari;
+        return luasJuringLingkaran;
     }
 
     public double getLuasJuringLingkaran() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasJuringLingkaran;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // keliling juring = 2 * r + (θ / 360) * 2 * π * r
+        kelilingJuringLingkaran = 2 * jariJari + (sudut / 360.0) * 2 * Math.PI * jariJari;
+        return kelilingJuringLingkaran;
     }
 
     public double getKelilingJuringLingkaran() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingJuringLingkaran;
     }
 }
