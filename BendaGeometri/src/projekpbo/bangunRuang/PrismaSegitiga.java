@@ -1,29 +1,32 @@
 package projekpbo.bangunRuang;
+import projekpbo.bangunDatar.Segitiga;
 
 public class PrismaSegitiga extends Segitiga {
 
     private double tinggiPrismaSegitiga;
-
     private double volumePrismaSegitiga;
-
     private double luasPermukaanPrismaSegitiga;
 
     public PrismaSegitiga(double alas, double tinggi, double tinggiPrismaSegitiga) {
+        super(alas, tinggi);
+        this.tinggiPrismaSegitiga = tinggiPrismaSegitiga;
+        this.volumePrismaSegitiga = hitungVolume();
+        this.luasPermukaanPrismaSegitiga = hitungLuasPermukaan();
     }
 
     public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return hitungLuas() * tinggiPrismaSegitiga;
     }
 
     public double getVolumePrismaSegitiga() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return volumePrismaSegitiga;
     }
 
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return (2 * hitungLuas()) + (hitungKeliling() * tinggiPrismaSegitiga);
     }
 
     public double getLuasPermukaanPrismaSegitiga() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPermukaanPrismaSegitiga;
     }
 }
