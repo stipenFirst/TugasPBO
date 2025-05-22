@@ -1,29 +1,36 @@
 package projekpbo.turunanBola;
+import projekpbo.bangunRuang.Bola;
 
 public class JuringBola extends Bola {
 
-    private double theta;
+    private double theta; // sudut dalam derajat
 
     private double luasJuring;
 
     private double kelilingJuring;
 
     public JuringBola(double jariJari, double theta) {
+        super(jariJari);
+        this.theta = theta;
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        // luas juring = (theta / 360) * luas permukaan bola
+        luasJuring = (theta / 360.0) * hitungLuasPermukaan();
+        return luasJuring;
     }
 
     public double getLuasJuring() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasJuring;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double kelilingLingkaranDasar = 2 * Math.PI * jariJari;
+        kelilingJuring = (theta / 360.0) * kelilingLingkaranDasar + 2 * jariJari;
+        return kelilingJuring;
     }
 
     public double getKelilingJuring() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingJuring;
     }
 }

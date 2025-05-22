@@ -1,29 +1,35 @@
 package projekpbo.turunanBola;
 
+import projekpbo.bangunRuang.Bola;
+
 public class TemberengBola extends Bola {
 
     private double theta;
-
     private double luasTembereng;
-
     private double kelilingTembereng;
 
     public TemberengBola(double jariJari, double theta) {
+        super(jariJari);
+        this.theta = theta;
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double thetaRad = Math.toRadians(theta);
+        luasTembereng = 2 * Math.PI * jariJari * jariJari * (1 - Math.cos(thetaRad / 2));
+        return luasTembereng;
     }
 
     public double getLuasTembereng() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasTembereng;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        double thetaRad = Math.toRadians(theta);
+        kelilingTembereng = 2 * Math.PI * jariJari * Math.sin(thetaRad / 2);
+        return kelilingTembereng;
     }
 
     public double getKelilingTembereng() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingTembereng;
     }
 }

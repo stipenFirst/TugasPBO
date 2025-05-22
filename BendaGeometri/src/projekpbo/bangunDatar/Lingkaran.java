@@ -1,5 +1,7 @@
 package projekpbo.bangunDatar;
 
+import projekpbo.Geometri2D;
+
 public class Lingkaran extends Geometri2D {
 
     public double jariJari;
@@ -9,21 +11,24 @@ public class Lingkaran extends Geometri2D {
     private double kelilingLingkaran;
 
     public Lingkaran(double jariJari) {
+        this.jariJari = jariJari;
     }
 
     public double hitungLuas() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasLingkaran = Math.PI * jariJari * jariJari;
+        return luasLingkaran;
     }
 
     public double getLuasLingkaran() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasLingkaran;
     }
 
     public double hitungKeliling() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        kelilingLingkaran = 2 * Math.PI * jariJari;
+        return kelilingLingkaran;
     }
 
     public double getKelilingLingkaran() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return kelilingLingkaran;
     }
 }

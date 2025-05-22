@@ -1,5 +1,7 @@
 package projekpbo.bangunRuang;
 
+import projekpbo.bangunDatar.Lingkaran;
+
 public class Bola extends Lingkaran {
 
     private double volumeBola;
@@ -7,21 +9,24 @@ public class Bola extends Lingkaran {
     private double luasPermukaanBola;
 
     public Bola(double jariJari) {
+        super(jariJari);
     }
 
     public double hitungVolume() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        volumeBola = (4.0 / 3.0) * Math.PI * Math.pow(jariJari, 3);
+        return volumeBola;
     }
 
     public double getVolumeBola() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return volumeBola;
     }
 
     public double hitungLuasPermukaan() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        luasPermukaanBola = 4 * Math.PI * jariJari * jariJari;
+        return luasPermukaanBola;
     }
 
     public double getLuasPermukaanBola() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        return luasPermukaanBola;
     }
 }
